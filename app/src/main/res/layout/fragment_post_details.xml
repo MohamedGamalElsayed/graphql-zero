@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/fragment_post_details"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  android:padding="@dimen/margin_3x">
+  <TextView
+    android:id="@+id/tv_author"
+    style="@style/TextAppearance.Title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_2x"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/tv_title"
+    tools:text="mohamedgamal (Mohamed Gamal)" />
+  
+  <TextView
+    android:id="@+id/tv_title"
+    style="@style/TextAppearance.SubTitle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_x"
+    app:layout_constraintTop_toBottomOf="@id/tv_author"
+    app:layout_constraintBottom_toTopOf="@id/tv_body"
+    tools:text="This is a test post title" />
+    
+  <TextView
+    android:id="@+id/tv_body"
+    style="@style/TextAppearance.Body"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@id/tv_title"
+    android:maxLength="@integer/post_listing_body_max_letters"
+    tools:text="This is a test post body" />
+  
+  <androidx.constraintlayout.widget.Group
+    android:id="@+id/group_content"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:constraint_referenced_ids="tv_title, tv_author, tv_body"/>
+  
+  <ProgressBar
+    android:id="@+id/pb_loader"
+    android:layout_width="@dimen/progress_bar_size"
+    android:layout_height="@dimen/progress_bar_size"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    tools:visibility="gone" />
+</androidx.constraintlayout.widget.ConstraintLayout>

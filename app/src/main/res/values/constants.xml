@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <integer name="post_listing_body_max_letters">120</integer>
+</resources>

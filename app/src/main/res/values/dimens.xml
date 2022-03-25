@@ -1,0 +1,9 @@
+<resources>
+  <dimen name="margin_x">4dp</dimen>
+  <dimen name="margin_2x">8dp</dimen>
+  <dimen name="margin_3x">12dp</dimen>
+  
+  <dimen name="listing_item_margin">@dimen/margin_2x</dimen>
+  
+  <dimen name="progress_bar_size">30dp</dimen>
+</resources>

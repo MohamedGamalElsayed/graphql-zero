@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/item_view_post"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:layout_marginBottom="@dimen/listing_item_margin"
+  app:cardCornerRadius="@dimen/cardview_default_radius"
+  app:cardElevation="@dimen/cardview_default_elevation"
+  app:contentPadding="@dimen/margin_2x">
+  
+  <LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    
+    <TextView
+      android:id="@+id/tv_title"
+      style="@style/TextAppearance.SubTitle"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="@dimen/margin_x"
+      tools:text="This is a test post title" />
+    
+    <TextView
+      android:id="@+id/tv_body"
+      style="@style/TextAppearance.Body"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:maxLength="@integer/post_listing_body_max_letters"
+      tools:text="This is a test post body" />
+  </LinearLayout>
+</androidx.cardview.widget.CardView>

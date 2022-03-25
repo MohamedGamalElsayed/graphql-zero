@@ -1,0 +1,27 @@
+query PostsQuery (
+    $options: PageQueryOptions
+) {
+    posts(options: $options) {
+        data {
+            id
+            title
+            body
+        }
+        meta {
+            totalCount
+        }
+    }
+}
+
+query PostDetailsQuery (
+    $id: ID!
+) {
+    post(id: $id) {
+        title
+        body
+        user {
+            name
+            username
+        }
+    }
+}

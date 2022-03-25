@@ -1,0 +1,65 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "sample.mohamed.newsfeed"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            buildConfigField 'String', 'ZERO_GRAPHQL_URL', '"https://graphqlzero.almansi.me/api"'
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility rootProject.ext.sourceCompatibilityVersion
+        targetCompatibility rootProject.ext.targetCompatibilityVersion
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+}
+
+dependencies {
+    implementation project(':sharedutils')
+    implementation project(':zerographql')
+    implementation deps.kotlin
+    implementation deps.core_ktx
+    implementation deps.androidx
+    implementation deps.material_components
+    implementation deps.koin
+    implementation deps.coroutines
+    implementation deps.okhttp
+    implementation deps.idling_resource
+
+    testImplementation deps.coroutines_test
+    testImplementation deps.androidx_test
+    testImplementation deps.junit
+    testImplementation deps.kotlin_mockito
+    testImplementation deps.livedata_test
+
+    androidTestImplementation deps.androidx_test
+    androidTestImplementation deps.espresso
+    androidTestImplementation deps.idling_resource
+}

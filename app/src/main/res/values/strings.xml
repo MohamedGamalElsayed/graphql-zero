@@ -1,0 +1,10 @@
+<resources>
+  <string name="app_name">graphql-zero</string>
+
+  <string name="posts_listing_fragment_label">Timeline</string>
+  
+  <string name="post_details_fragment_label">Details</string>
+  <string name="post_details_user_name">%1$s: (%2$s)</string>
+  
+  <string name="msg_error_default">Something went wrong!</string>
+</resources>

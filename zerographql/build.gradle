@@ -1,0 +1,33 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+    id("com.apollographql.apollo3").version("3.1.0")
+}
+
+java {
+    sourceCompatibility rootProject.ext.sourceCompatibilityVersion
+    targetCompatibility rootProject.ext.targetCompatibilityVersion
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = rootProject.ext.sourceCompatibilityVersion.toString()
+    }
+}
+
+apollo {
+    packageName.set("sample.mohamed.zerographql")
+}
+
+dependencies {
+    implementation project(':sharedutils')
+    implementation deps.kotlin
+    implementation deps.apollo
+    implementation deps.okhttp
+    implementation deps.gson
+    implementation deps.coroutines
+
+    testImplementation deps.coroutines_test
+    testImplementation deps.junit
+    testImplementation deps.kotlin_mockito
+}

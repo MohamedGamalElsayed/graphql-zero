@@ -1,0 +1,20 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+}
+
+java {
+    sourceCompatibility rootProject.ext.sourceCompatibilityVersion
+    targetCompatibility rootProject.ext.targetCompatibilityVersion
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = rootProject.ext.sourceCompatibilityVersion.toString()
+    }
+}
+
+dependencies {
+    implementation deps.kotlin
+    implementation deps.coroutines
+}

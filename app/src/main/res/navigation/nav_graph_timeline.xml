@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/nav_graph_timeline"
+  app:startDestination="@id/PostsListingFragment">
+
+    <fragment
+      android:id="@+id/PostsListingFragment"
+      android:name="sample.mohamed.newsfeed.features.timeline.posts.ui.PostsListingFragment"
+      android:label="@string/posts_listing_fragment_label"
+      tools:layout="@layout/fragment_posts_listing">
+
+        <action
+          android:id="@+id/action_PostsListingFragment_to_PostDetailsFragment"
+          app:destination="@id/PostDetailsFragment" />
+    </fragment>
+    <fragment
+      android:id="@+id/PostDetailsFragment"
+      android:name="sample.mohamed.newsfeed.features.timeline.posts.ui.PostDetailsFragment"
+      android:label="@string/post_details_fragment_label"
+      tools:layout="@layout/fragment_post_details" />
+</navigation>
